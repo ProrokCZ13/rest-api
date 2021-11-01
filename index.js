@@ -7,7 +7,7 @@ const app = express();
 app.get('/user/:id', (req, res) => {
     const { id } = req.params;
     res.status(200).send({
-        payload: id
+        payload:{ id }
     });
 });
 
@@ -15,7 +15,7 @@ app.get('/user/:id', (req, res) => {
 app.get('/article/:java/:id', (req, res) => {
     const { java, id } = req.params;
     res.status(200).send({
-        payload:java, id
+        payload: { java, id }
     });
 });
 
@@ -23,7 +23,7 @@ app.get('/article/:java/:id', (req, res) => {
 app.get('/comment/:id', (req, res) => {
     const { id } = req.params;
     res.status(200).send({
-        payload: id
+        payload:{ id }
     });
 });
 
@@ -31,7 +31,7 @@ app.get('/comment/:id', (req, res) => {
 app.post('/user', (req, res) => {
     const { name, age } = req.params;
     res.status(200).send({
-        payload: name, age
+        payload:{ name, age }
     });
 });
 
@@ -39,8 +39,8 @@ app.post('/user', (req, res) => {
 app.post('/article', (req, res) => {
     const { title, category  } = req.params;
     res.status(200).send({
-        payload: title, category
-    });
+        payload:{ title, category }
+    }); 
 });
 
 
@@ -48,7 +48,7 @@ app.post('/article', (req, res) => {
 app.post('/category', (req, res) => {
     const { name } = req.params;
     res.status(200).send({
-        payload: name
+        payload:{ name }
     });
 });
 
@@ -56,7 +56,7 @@ app.post('/category', (req, res) => {
 app.put('/user', (req, res) => {
     const { name, age } = req.params;
     res.status(200).send({
-        payload: name, age
+        payload:{ name, age }
     });
 });
 
@@ -64,7 +64,7 @@ app.put('/user', (req, res) => {
 app.patch('/user', (req, res) => {
     const { id, name } = req.params;
     res.status(200).send({
-        payload: id, name
+        payload:{ id, name }
     });
 });
 
@@ -72,6 +72,6 @@ app.patch('/user', (req, res) => {
 app.delete('/article', (req, res) => {
     const { id } = req.params;
     res.status(200).send({
-        payload: id
+        payload:{ id }
     });
 });
